@@ -1,0 +1,13 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: backbone
+spec:
+  host: backbone.apps.dev2.ecp.ehealthontario.ca
+  to:
+    kind: Service
+    name: backbone
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Allow
+  wildcardPolicy: None    

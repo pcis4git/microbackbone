@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backbone
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backbone
+  template:
+    metadata:
+      labels:
+        app: backbone
+    spec:
+      containers:
+        - name: backbone
+         #image: image-registry.openshift-image-registry.svc:5000/andy-wen-test/backbone:latest
+          image: image-registry.openshift-image-registry.svc:5000/andy-wen-test/backbone:latest
+          ports:
+            - containerPort: 8080
+              protocol: TCP
