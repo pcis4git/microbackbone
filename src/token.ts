@@ -4,6 +4,8 @@ import jwt from 'jsonwebtoken';
 import { OAGError } from "./errors";
 import { SecretsManagerClient, GetSecretValueCommand, PutSecretValueCommand } from "@aws-sdk/client-secrets-manager";
 import fs from 'fs';
+import { DebugLogger } from "util";
+import { fileLogger } from "./logger";
 
 export class TokenHandler implements IBackboneHandler, ILatency {
 
@@ -17,7 +19,7 @@ export class TokenHandler implements IBackboneHandler, ILatency {
 
         let tokenPayload = backboneContext.tokenPayload;
         if (tokenPayload == null) {
-            throw new OAGError('Invalid token', 'ATH02', 401);
+            throw new OAGError('Invalid token', 'ATH02', 401, 'Token payload is null');
         }
 
         tokenPayload['iss'] = 'provider.ehealthontario.ca';
@@ -48,7 +50,7 @@ export class TokenHandler implements IBackboneHandler, ILatency {
         }
 
         this.recordLatency(backboneContext);
-        console.log('extra lob headers: ' + JSON.stringify(backboneContext.lobExtraHeaders));
+        fileLogger.debug('extra lob headers: ' + JSON.stringify(backboneContext.lobExtraHeaders));
     }
 
     public recordLatency(backboneContext: BackboneContext): void {

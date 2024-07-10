@@ -11,8 +11,10 @@ import { LobHandler } from './lob';
 import { OAGError } from './errors';
 import { Validator } from './validater';
 import { AuditHandler } from './audit';
-import { log, logRequest, deriveBackboneContext, sendBackResponse, getBackBoneSetting, getBackBoneSetting2 } from "./utils";
+import { logRequest, deriveBackboneContext, sendBackResponse, getBackBoneSetting, getBackBoneSetting2 } from "./utils";
 import { TokenHandler } from './token';
+import { consoleLogger, fileLogger, logErrorTransaction, logSuccessTransaction } from './logger';  
+import { log } from 'console';
 
 //Always load environment variables from .env file at very beginning !
 dotenv.config();
@@ -75,7 +77,7 @@ async function launchExpress() {
   });
 
   app.listen(8080, () => {
-    log(`Server is running on port 8080 with worker ${process.pid}`);
+    fileLogger.info(`Server is running on port 8080 with worker ${process.pid}`);
   });
 
 }
@@ -101,9 +103,11 @@ async function handleRequest(request: Request, response: Response, backboneSetti
       await auditHandler.process(backboneContext);
       
       sendBackResponse(response, backboneContext);      
+      logSuccessTransaction(backboneContext);
   }
-  catch(error) {
-    log(`Error occurred while processing the request: ${error}`);
+  catch( error ) {
+    fileLogger.error(`Error occurred while processing the request: ${error}`);
+    logErrorTransaction(backboneContext, error);
     if( error instanceof OAGError ) {
       let errorMsg = {
         errorCode: error.errorCode,
@@ -119,7 +123,5 @@ async function handleRequest(request: Request, response: Response, backboneSetti
       response.status(500).send(errorMsg);      
     }
   }
-
-  log(JSON.stringify(backboneContext.latencyRecords));
 }
 

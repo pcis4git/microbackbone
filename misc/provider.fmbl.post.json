@@ -1,0 +1,74 @@
+{
+    "records": [
+        {
+            "value": {
+                "schema_version": "1.0.0",
+                "gtwy_timestamp": "2024-06-05T17:48:30.274Z",
+                "x-GtwyTxId": "ef9717096660a4ee00023770",
+                "request.headers": {
+                    "Authorization": "Bearer eyJ4NXQiOiJEM1FDblNSMzR6UytBalNhMlc3V0lFaHNVRlE9IiwidHlwIjoiSldUIiwia2lkIjoiMEY3NDAyOUQyNDc3RTMzNEJFMDIzNDlBRDk2RUQ2MjA0ODZDNTA1NCIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI4REU0MjEzOUVDMTkxNTg0RTA1NDAwNTA1NjkyMDAwRkBvbmVpZGZlZC5vbi5jYSIsImFwcFZlcnNpb24iOiI5OS45IiwiYXVkaXRUcmFja2luZ0lkIjoiZTBhNWJkNjgtODY1NS00MTc3LThiMDctZWY3MWM4YThjYjYzLTM3ODk3MiIsImlzcyI6Imh0dHBzOi8vbG9naW4ucWEub25laWRmZWRlcmF0aW9uLmVoZWFsdGhvbnRhcmlvLmNhOjI0NDMvc3NvL29hdXRoMi9yZWFsbXMvcm9vdC9yZWFsbXMvaWRhYXNxYW9pZGMiLCJ0b2tlbk5hbWUiOiJhY2Nlc3NfdG9rZW4iLCJkbiI6IkNOPU9BdXRoX09MSVMuRFRFUGFydG5lcixPVT1BcHBsaWNhdGlvbnMsT1U9ZUhlYWx0aFVzZXJzLE9VPVN1YnNjcmliZXJzLERDPXN1YnNjcmliZXJzLERDPXNzaCIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJyaWQiOlsiQ05POjQ3NSIsIkNDTzo3ODkiLCJVUEk6MTIzNDU2Nzg5MDEyMyIsIkNQU086NTQ1MzUiXSwidWFvTmFtZSI6Ik5vcnRoWW9yayBHZW5lcmFsIEhvc3BpdGFsIiwiZ3JhbnRfdHlwZSI6ImF1dGhvcml6YXRpb25fY29kZSIsImF6cCI6Imh0dHBzOi8vb2xpc3ZpZXdsZXQuZWhlYWx0aG9udGFyaW8uY2EiLCJzY29wZSI6WyJ1c2VyL0NvbnNlbnQud3JpdGUiLCJ1c2VyL0NvbnNlbnQucmVhZCIsInVzZXIvQ29udGV4dC53cml0ZSIsInVzZXIvQ29udGV4dC5yZWFkIiwidXNlci9PYnNlcnZhdGlvbi5yZWFkIiwidXNlci9PYnNlcnZhdGlvbi53cml0ZSIsInVzZXIvTWVkaWNhdGlvbkRpc3BlbnNlLnJlYWQiLCJ1c2VyL01lZGljYXRpb25EaXNwZW5zZS53cml0ZSIsInVzZXIvUGF0aWVudC5yZWFkIiwidXNlci9JbW11bml6YXRpb24ucmVhZCIsInVzZXIvRGlhZ25vc3RpY1JlcG9ydC5yZWFkIiwidXNlci90ZW1wbGF0ZWFwaS5yZWFkIiwidXNlci90ZW1wbGF0ZWFwaS53cml0ZSIsInVzZXIvSW1tdW5pemF0aW9uLndyaXRlIl0sImNvbnRleHRTZXNzaW9uSWQiOiI1LjQ0RSsxNSIsInN0YXRlIjoiYjE2NWQzYzUzMmVjMzdjNDU3YTFhNmY1MWU2YzgzNGUwNmYxYzUwY2JiMTQxNTE3MWI2ZjY1M2E0YWY1NWFmN2EyZmJmZjgxODUyMTgwOTNkZjhjZjgyZjU2MTEzN2U5NGIxYjA1OWM3OTEzZGJkM2NkZDgyZjVmYTVhMGEyY2QiLCJleHAiOjE3MzM5MjkzNjcsImFwaV9rZXlzIjpbIllUenFrUU1DbXJ3dkJxZElDQkNSRU01TkZEa2FZdWNjQnlHSlVVOVY4S0U9Il0sImNsaWVudC1pZCI6Imh0dHBzOi8vb2xpc3ZpZXdsZXQuZWhlYWx0aG9udGFyaW8uY2EiLCJpYXQiOjE3MDIzOTMzNjcsImp0aSI6IjM0OGRmYTU0LWU0YjAtNDgwZS1iYTI3LTlhMzQxNDBmNDFmMiIsImVtYWlsIjoicGNvaUBlaGVhbHRob250YXJpby5vbi5jYSIsImFwcCI6IlBDT0lDbGllbnRBcHBsaWNhdGlvbiIsInVhbyI6IjIuMTYuODQwLjEuMTEzODgzLjMuMjM5Ljk6MTIzNDU2Nzg5MDEyMyIsImF1ZGllbmNlIjoiaHR0cHM6Ly9wcm92aWRlci5laGVhbHRoT250YXJpby5vbi5jYSIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJnaXZlbl9uYW1lIjoiZWhvMiIsImF1dGhHcmFudElkIjoic29tZSByYW5kb20gaWQgeW91IGxpa2Ugb3IgZGlzbGlrZSIsIm5vbmNlIjoiMy40M0UrMjciLCJ2ZXJzaW9uIjoiMSIsImF1ZCI6WyJodHRwczovL3Byb3ZpZGVyLnZ0ZS5laGVhbHRob250YXJpby5jYSJdLCJfcHJvZmlsZSI6WyJodHRwOi8vZWhlYWx0aG9udGFyaW8uY2EvZmhpci9TdHJ1Y3R1cmVEZWZpbml0aW9uL2NhLW9uLWNvbnNlbnQtcGNvaS1wcm9maWxlLUNvbnNlbnQiLCJodHRwOi8vZWhlYWx0aG9udGFyaW8uY2EvU3RydWN0dXJlRGVmaW5pdGlvbi9jYS1vbi1kaGRyLXByb2ZpbGUtTWVkaWNhdGlvbkRpc3BlbnNlIiwiaHR0cDovL2VoZWFsdGhvbnRhcmlvLmNhL1N0cnVjdHVyZURlZmluaXRpb24vY2Etb24tbGFiLXByb2ZpbGUtRGlhZ25vc3RpY1JlcG9ydCJdLCJpZHAiOiIyLjE2Ljg0MC4xLjExMzg4My4zLjIzOS4yMy45OTk5OSIsInJlYWxtIjoiL21pY2hhZWxyZWFsbW9mc21hcnRkZXZlbG9wbWVudCIsImZhbWlseV9uYW1lIjoiUENPSTIiLCJvYm8iOiIyLjE2Ljg0MC4xLjExMzg4My40LjM0Nzo0NTYiLCJ1YW9UeXBlIjoib3JnIiwidXNlcm5hbWUiOiJ0ZXN0MS5vYXVndGhwYXJ0bmVyQG9uZWlkLm9uLmNhIn0.x8L2bnYdZKkuy16c1mbEy7m7wfL2FAMyts4MznWFINAW9mNA2jjzN9t2bDlLK4wNvHvwo-vbeI-_Z5veISNXEKlml7zsAUo-sCpgLJzuRYr97SCH9lVYabnlKsD7fQexhkRndPfdfWIapRBE5npZuAXGquq853_z-LX_BNOCEz47Fuv8eOFKjaYHKTUOeXl8TkIiPXRhcQ8SDGINkGZBLiDjMzO3UFsc4woeEYLnPU9PYK5TcK2wpNl6Wy10rKKtxnPiWHOgnytnH_K1NYAFpOKhZSwEaKX8MlB7UuoZF4_vHyjLFTCjdRJYLEi9D6jKJpYD3wXn55nVAHBHNQs38g",
+                    "X-Gtwy-Client-Id": "eb136a5e5f6ba0c5462e46deb20468a1",
+                    "Content-Type": "application/json",
+                    "Content-Length": "1421",
+                    "Host": "10.251.41.187",
+                    "User-Agent": "Apache-HttpClient/4.5.12 (Java/11.0.5)",
+                    "Accept-Encoding": "gzip,deflate"
+                },
+                "response.headers": null,
+                "api_endpoint_url": "https://10.251.41.187/api4/fhir/cms",
+                "api_product_plan_version": "cms-api-provider:2.0.3.0:burst100per5sec",
+                "api_name": "api-context-management-service",
+                "api_version": "2.0.3.0",
+                "lob_endpoint_url": "http://cms-qa.apps.gnp2.ecp.ehealthontario.ca",
+                "gtwy_node": "10.251.41.187",
+                "direction": "Request",
+                "response_code": null,
+                "response_phrase": null,
+                "http_method": "POST",
+                "client_ip": "10.251.40.44",
+                "payload_content_type": "Base64/json",
+                "message_content": {
+                    "querystring": "UE9TVCBodHRwczovLzEwLjI1MS40MS4xODc6NDQzL2FwaTQvZmhpci9jbXM=",
+                    "payload": "ew0KICAidGltZXN0YW1wIjogIjIwMTgtMDEtMDhUMDE6Mzc6MDUuMTQiLA0KICAiaWQiOiAiYmU4N2I4MzktNmIwOC00NzMwLThiYzktOWI0OWE2NDgwMzU5IiwNCiAgImV2ZW50Ijogew0KICAgICJodWIudG9waWMiOiAiMThGNTY4RTAtQ0YyOC00RkVELTlDOEYtNjk5RUM2RjM4NDk5IiwNCiAgICAiaHViLmV2ZW50IjogInBhdGllbnQtb3BlbiIsDQogICAgImNvbnRleHQiOiBbDQogICAgICB7DQogICAgICAgICJrZXkiOiAicGF0aWVudCIsDQogICAgICAgICJyZXNvdXJjZSI6IHsNCiAgICAgICAgICAicmVzb3VyY2VUeXBlIjogIlBhdGllbnQiLA0KICAgICAgICAgICAibWV0YSI6eyJwcm9maWxlIjpbImh0dHA6Ly9laGVhbHRob250YXJpby5jYS9maGlyL1N0cnVjdHVyZURlZmluaXRpb24vY2Etb24tY21zLXByb2ZpbGUtUGF0aWVudHwxLjAuMCJdfSwNCiAgICAgICAgICAiaWQiOiAiNWIwOTQ5ZDQtZDZiYi00N2IwLWE3MGEtZjcyY2U2NWU0NjE2IiwNCiAgICAgICAgICAiaWRlbnRpZmllciI6IFsNCgkJICB7DQoJCSAgInR5cGUiOg0KCQkJew0KCQkJImNvZGluZyI6Ww0KCQkJCXsNCgkJCQkic3lzdGVtIjoiaHR0cDovL2hsNy5vcmcvZmhpci92Mi8wMjAzIiwNCgkJCQkiY29kZSI6IkpITiINCgkJCQl9DQoJCQldLA0KCQkJInRleHQiOiJPbnRhcmlvIEhFYWx0aCBDYXJkIE5VbWJlciINCgkJCX0sDQoJCQkic3lzdGVtIjoiaHR0cHM6Ly9maGlyLmluZm93YXktaW5mb3JvdXRlLmNhL05hbWluZ1N5c3RlbS9jYS1vbi1wYXRpZW50LWhjbiIsDQoJCQkidmFsdWUiOiIxMTIyMzM0NDU1NjY3Nzg4Ig0KCQkJfQ0KICAgICAgICAgIF0sDQoJCSAgImFjdGl2ZSI6CXRydWUsDQogICAgICAgICAgIm5hbWUiOg0KCQkgIFt7DQogICAgICAgICAgICAidXNlIjogIm9mZmljaWFsIiwNCiAgICAgICAgICAgICJmYW1pbHkiOiAiQnJvd24iLA0KICAgICAgICAgICAgImdpdmVuIjogWyJHZW9yZ2UiXQ0KCQkJfV0sDQogICAgICAgICAgImdlbmRlciI6ICJtYWxlIiwNCiAgICAgICAgICAiYmlydGhEYXRlIjogIjE5NjYtMDYtMDYiLA0KICAgICAgICAgICJhZGRyZXNzIjogWw0KICAgICAgICAgICAgew0KICAgICAgICAgICAgICAidXNlIjogImhvbWUiLA0KICAgICAgICAgICAgICAidHlwZSI6ICJwaHlzaWNhbCIsDQogICAgICAgICAgICAgICJsaW5lIjogWw0KICAgICAgICAgICAgICAgICI0MTUgWW9uZ2UgU3RyZWV0Ig0KICAgICAgICAgICAgICBdLA0KICAgICAgICAgICAgICAiY2l0eSI6ICJUb3JvbnRvIiwNCiAgICAgICAgICAgICAgInN0YXRlIjogIk9OIiwNCiAgICAgICAgICAgICAgInBvc3RhbENvZGUiOiAiTTFNIE0yTSIsDQogICAgICAgICAgICAgICJjb3VudHJ5IjogIkNBTiINCiAgICAgICAgICAgIH0NCiAgICAgICAgICBdDQogICAgICAgIH0NCiAgICAgIH0NCiAgICBdDQogIH0NCn0="
+                }
+            }
+        },
+        {
+            "value": {
+                "schema_version": "1.0.0",
+                "gtwy_timestamp": "2024-06-05T17:48:30.294Z",
+                "request.headers": {
+                    "Authorization": "Bearer eyJ4NXQiOiJEM1FDblNSMzR6UytBalNhMlc3V0lFaHNVRlE9IiwidHlwIjoiSldUIiwia2lkIjoiMEY3NDAyOUQyNDc3RTMzNEJFMDIzNDlBRDk2RUQ2MjA0ODZDNTA1NCIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI4REU0MjEzOUVDMTkxNTg0RTA1NDAwNTA1NjkyMDAwRkBvbmVpZGZlZC5vbi5jYSIsImFwcFZlcnNpb24iOiI5OS45IiwiYXVkaXRUcmFja2luZ0lkIjoiZTBhNWJkNjgtODY1NS00MTc3LThiMDctZWY3MWM4YThjYjYzLTM3ODk3MiIsImlzcyI6Imh0dHBzOi8vbG9naW4ucWEub25laWRmZWRlcmF0aW9uLmVoZWFsdGhvbnRhcmlvLmNhOjI0NDMvc3NvL29hdXRoMi9yZWFsbXMvcm9vdC9yZWFsbXMvaWRhYXNxYW9pZGMiLCJ0b2tlbk5hbWUiOiJhY2Nlc3NfdG9rZW4iLCJkbiI6IkNOPU9BdXRoX09MSVMuRFRFUGFydG5lcixPVT1BcHBsaWNhdGlvbnMsT1U9ZUhlYWx0aFVzZXJzLE9VPVN1YnNjcmliZXJzLERDPXN1YnNjcmliZXJzLERDPXNzaCIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJyaWQiOlsiQ05POjQ3NSIsIkNDTzo3ODkiLCJVUEk6MTIzNDU2Nzg5MDEyMyIsIkNQU086NTQ1MzUiXSwidWFvTmFtZSI6Ik5vcnRoWW9yayBHZW5lcmFsIEhvc3BpdGFsIiwiZ3JhbnRfdHlwZSI6ImF1dGhvcml6YXRpb25fY29kZSIsImF6cCI6Imh0dHBzOi8vb2xpc3ZpZXdsZXQuZWhlYWx0aG9udGFyaW8uY2EiLCJzY29wZSI6WyJ1c2VyL0NvbnNlbnQud3JpdGUiLCJ1c2VyL0NvbnNlbnQucmVhZCIsInVzZXIvQ29udGV4dC53cml0ZSIsInVzZXIvQ29udGV4dC5yZWFkIiwidXNlci9PYnNlcnZhdGlvbi5yZWFkIiwidXNlci9PYnNlcnZhdGlvbi53cml0ZSIsInVzZXIvTWVkaWNhdGlvbkRpc3BlbnNlLnJlYWQiLCJ1c2VyL01lZGljYXRpb25EaXNwZW5zZS53cml0ZSIsInVzZXIvUGF0aWVudC5yZWFkIiwidXNlci9JbW11bml6YXRpb24ucmVhZCIsInVzZXIvRGlhZ25vc3RpY1JlcG9ydC5yZWFkIiwidXNlci90ZW1wbGF0ZWFwaS5yZWFkIiwidXNlci90ZW1wbGF0ZWFwaS53cml0ZSIsInVzZXIvSW1tdW5pemF0aW9uLndyaXRlIl0sImNvbnRleHRTZXNzaW9uSWQiOiI1LjQ0RSsxNSIsInN0YXRlIjoiYjE2NWQzYzUzMmVjMzdjNDU3YTFhNmY1MWU2YzgzNGUwNmYxYzUwY2JiMTQxNTE3MWI2ZjY1M2E0YWY1NWFmN2EyZmJmZjgxODUyMTgwOTNkZjhjZjgyZjU2MTEzN2U5NGIxYjA1OWM3OTEzZGJkM2NkZDgyZjVmYTVhMGEyY2QiLCJleHAiOjE3MzM5MjkzNjcsImFwaV9rZXlzIjpbIllUenFrUU1DbXJ3dkJxZElDQkNSRU01TkZEa2FZdWNjQnlHSlVVOVY4S0U9Il0sImNsaWVudC1pZCI6Imh0dHBzOi8vb2xpc3ZpZXdsZXQuZWhlYWx0aG9udGFyaW8uY2EiLCJpYXQiOjE3MDIzOTMzNjcsImp0aSI6IjM0OGRmYTU0LWU0YjAtNDgwZS1iYTI3LTlhMzQxNDBmNDFmMiIsImVtYWlsIjoicGNvaUBlaGVhbHRob250YXJpby5vbi5jYSIsImFwcCI6IlBDT0lDbGllbnRBcHBsaWNhdGlvbiIsInVhbyI6IjIuMTYuODQwLjEuMTEzODgzLjMuMjM5Ljk6MTIzNDU2Nzg5MDEyMyIsImF1ZGllbmNlIjoiaHR0cHM6Ly9wcm92aWRlci5laGVhbHRoT250YXJpby5vbi5jYSIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJnaXZlbl9uYW1lIjoiZWhvMiIsImF1dGhHcmFudElkIjoic29tZSByYW5kb20gaWQgeW91IGxpa2Ugb3IgZGlzbGlrZSIsIm5vbmNlIjoiMy40M0UrMjciLCJ2ZXJzaW9uIjoiMSIsImF1ZCI6WyJodHRwczovL3Byb3ZpZGVyLnZ0ZS5laGVhbHRob250YXJpby5jYSJdLCJfcHJvZmlsZSI6WyJodHRwOi8vZWhlYWx0aG9udGFyaW8uY2EvZmhpci9TdHJ1Y3R1cmVEZWZpbml0aW9uL2NhLW9uLWNvbnNlbnQtcGNvaS1wcm9maWxlLUNvbnNlbnQiLCJodHRwOi8vZWhlYWx0aG9udGFyaW8uY2EvU3RydWN0dXJlRGVmaW5pdGlvbi9jYS1vbi1kaGRyLXByb2ZpbGUtTWVkaWNhdGlvbkRpc3BlbnNlIiwiaHR0cDovL2VoZWFsdGhvbnRhcmlvLmNhL1N0cnVjdHVyZURlZmluaXRpb24vY2Etb24tbGFiLXByb2ZpbGUtRGlhZ25vc3RpY1JlcG9ydCJdLCJpZHAiOiIyLjE2Ljg0MC4xLjExMzg4My4zLjIzOS4yMy45OTk5OSIsInJlYWxtIjoiL21pY2hhZWxyZWFsbW9mc21hcnRkZXZlbG9wbWVudCIsImZhbWlseV9uYW1lIjoiUENPSTIiLCJvYm8iOiIyLjE2Ljg0MC4xLjExMzg4My40LjM0Nzo0NTYiLCJ1YW9UeXBlIjoib3JnIiwidXNlcm5hbWUiOiJ0ZXN0MS5vYXVndGhwYXJ0bmVyQG9uZWlkLm9uLmNhIn0.x8L2bnYdZKkuy16c1mbEy7m7wfL2FAMyts4MznWFINAW9mNA2jjzN9t2bDlLK4wNvHvwo-vbeI-_Z5veISNXEKlml7zsAUo-sCpgLJzuRYr97SCH9lVYabnlKsD7fQexhkRndPfdfWIapRBE5npZuAXGquq853_z-LX_BNOCEz47Fuv8eOFKjaYHKTUOeXl8TkIiPXRhcQ8SDGINkGZBLiDjMzO3UFsc4woeEYLnPU9PYK5TcK2wpNl6Wy10rKKtxnPiWHOgnytnH_K1NYAFpOKhZSwEaKX8MlB7UuoZF4_vHyjLFTCjdRJYLEi9D6jKJpYD3wXn55nVAHBHNQs38g",
+                    "X-Gtwy-Client-Id": "eb136a5e5f6ba0c5462e46deb20468a1",
+                    "Content-Type": "application/json",
+                    "Content-Length": "1421",
+                    "Host": "10.251.41.187",
+                    "User-Agent": "Apache-HttpClient/4.5.12 (Java/11.0.5)",
+                    "Accept-Encoding": "gzip,deflate"
+                },
+                "x-GtwyTxId": "ef9717096660a4ee00023770",
+                "response.headers": {
+                    "X-Lobtxid": "4768B0BF-DCB6-4D16-B5FB-1113099EE5A1",
+                    "X-Correlation-Id": null,
+                    "X-Request-Id": "ef9717096660a4ee00023770",
+                    "X-GtwyTxId": "ef9717096660a4ee00023770"
+                },
+                "api_endpoint_url": "https://10.251.41.187/api4/fhir/cms",
+                "api_name": "api-context-management-service",
+                "api_version": "2.0.3.0",
+                "api_product_plan_version": "cms-api-provider:2.0.3.0:burst100per5sec",
+                "lob_endpoint_url": "http://cms-qa.apps.gnp2.ecp.ehealthontario.ca",
+                "gtwy_node": "10.251.41.187",
+                "direction": "Response",
+                "response_code": "200",
+                "response_phrase": "OK",
+                "http_method": "POST",
+                "client_ip": "10.251.40.44",
+                "payload_content_type": "Base64/application/json; charset=utf-8",
+                "message_content": {
+                    "payload": "eyJzdGF0dXMiOiJTdWNjZXNzIiwiY29kZSI6MjAwLCJpZCI6ImJlODdiODM5LTZiMDgtNDczMC04YmM5LTliNDlhNjQ4MDM1OSIsImh1Yi50b3BpYyI6IjE4RjU2OEUwLUNGMjgtNEZFRC05QzhGLTY5OUVDNkYzODQ5OSIsImh1Yi5ldmVudCI6InBhdGllbnQtb3BlbiIsImxvYi5pZCI6IjQ3NjhCMEJGLURDQjYtNEQxNi1CNUZCLTExMTMwOTlFRTVBMSIsInN1Y2Nlc3MiOnRydWUsImZhaWx1cmUiOmZhbHNlLCJlcnJvckNvZGVzIjpbXSwiaGFzUmVhc29uIjpmYWxzZSwiaGFzRXJyb3JDb2RlcyI6ZmFsc2V9"
+                }
+            }
+        }
+    ]
+}

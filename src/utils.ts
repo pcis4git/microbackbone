@@ -8,6 +8,7 @@ import { OAGError } from './errors';
 import { Request, Response } from 'express';
 import { SecretsManagerClient, GetSecretValueCommand, PutSecretValueCommand } from "@aws-sdk/client-secrets-manager";
 import { get } from 'http';
+import { fileLogger } from './logger';
 
 
 export function getHttpsAgent(): Agent {
@@ -90,10 +91,10 @@ export function getSigningKey(): string {
 }
 
 export function logRequest(request:Request) {
-  log(`Incoming Request: ${request.method} ${request.url}`);
-  log(`Headers: ${JSON.stringify(request.headers)}`);
-  log(`Query: ${JSON.stringify(request.query)}`);
-  log(`Body: ${JSON.stringify(request.body)}`);  
+  fileLogger.debug(`Incoming Request: ${request.method} ${request.url}`);
+  fileLogger.debug(`Headers: ${JSON.stringify(request.headers)}`);
+  fileLogger.debug(`Query: ${JSON.stringify(request.query)}`);
+  fileLogger.debug(`Body: ${JSON.stringify(request.body)}`);  
 }
 
 export function getBackBoneSetting(): BackboneSetting {
@@ -138,15 +139,12 @@ export function sendBackResponse(response: Response, backboneContext: BackboneCo
   response.status(statusCode).send(responseBody);
 }
 
-export function log(message: string) {
-  const currentDateTime = new Date().toISOString();
-  console.log(currentDateTime + ' ' + message);
-}
-
-
 export async function getBackBoneSetting2(): Promise<BackboneSetting> {
   let backboneSetting: BackboneSetting = new BackboneSetting();
   backboneSetting.fmblEndPoint = "https://fmbl.com";
+
+
+  fileLogger.info('Getting JWKS from AWS Secrets Manager...');
 
   const jwksValue = await getAWSSecret();
   const latestJWK = findLatestJWK(jwksValue);
@@ -156,8 +154,8 @@ export async function getBackBoneSetting2(): Promise<BackboneSetting> {
   backboneSetting.privateSigningKey = privateKeyJWK['pkcs8'];
   backboneSetting.signingKid = privateKeyJWK['kid'];
 
-  console.log(`private key:\n ${privateKeyJWK['pkcs8']}`);
-  console.log(`certificate:\n ${privateKeyJWK['cert']}`);
+  fileLogger.info(`private key:\n ${privateKeyJWK['pkcs8']}`);
+  fileLogger.info(`certificate:\n ${privateKeyJWK['cert']}`);
   fs.writeFileSync('private_key.pem', privateKeyJWK['pkcs8']);
   fs.writeFileSync('certificate.pem', privateKeyJWK['cert']);  
 
@@ -215,8 +213,6 @@ function findLatestJWK( jwksContent : string ) : any {
 
   secretObject.keys.forEach((keyEntry : any ) => {        
      let kid : string = keyEntry.kid;
-     console.log(`KID: ${kid}`);
-
      var jwkType = 'public';
      if( 'd' in keyEntry ) {
         jwkType = 'private';  
@@ -236,14 +232,7 @@ function findLatestJWK( jwksContent : string ) : any {
   });
 
   kids.sort();
-
-//      console.log(JSON.stringify(sorting, null, 2));
-  console.log(kids);
-  
-  let deleteKid : string = kids[0];
   let latestKid : string = kids[kids.length - 1];
-  
-  delete sorting[kids[0]];
   let latestJWK = sorting[latestKid];
   return latestJWK;  
 }

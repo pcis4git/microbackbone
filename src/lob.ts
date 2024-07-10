@@ -4,7 +4,7 @@ import { IBackboneHandler, ILatency } from "./baseTypes";
 import { BackboneContext, LatencyRecord } from "./baseTypes";
 import { WrappedRequest } from "./baseTypes";
 import { OAGError } from "./errors";
-import { log } from "./utils";
+import { fileLogger, consoleLogger } from "./logger";
 
 export class LobHandler implements IBackboneHandler, ILatency {
 
@@ -65,7 +65,7 @@ export class LobHandler implements IBackboneHandler, ILatency {
 
     try {
 
-      log('backbone start to call LOB at ' + endpoint );
+      fileLogger.debug('backbone start to call LOB at ' + endpoint );
 
       let httpMethod: string = wrappedRequest.context['http-method'] ?? '';
       if (httpMethod === 'GET') {
@@ -81,12 +81,12 @@ export class LobHandler implements IBackboneHandler, ILatency {
         backboneContext.lobResponse = lobResponse;
       }
       this.recordLatency(backboneContext);
-      log('Backend call successful, response status: ' + (backboneContext.lobResponse ? backboneContext.lobResponse.status : 'unknown'));
+      fileLogger.debug('Backend call successful, response status: ' + (backboneContext.lobResponse ? backboneContext.lobResponse.status : 'unknown'));
     }
     catch (error) {
       this.recordLatency(backboneContext);
-      log(`LobHandler: Error occurred while processing the request: ${error}`);
-      throw new OAGError('LobHandler: Error occurred while calling backend', 'SYS01', 500);
+      fileLogger.debug(`LobHandler: Error occurred while processing the request: ${error}`);
+      throw new OAGError('LobHandler: Error occurred while calling backend', 'SYS01', 500, 'error details: ' + error);
     }
   }
 

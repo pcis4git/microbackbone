@@ -39,13 +39,15 @@ export class RequestParams {
 
 export class BackboneContext {
 
+   startTimeStamp: number = Date.now();
+   startTime: string = new Date().toLocaleDateString();
    apiSetup: APISetup ;
    backboneSetting: BackboneSetting;
    wrappedRequest: WrappedRequest ;
    latencyRecords: LatencyRecord[]; 
    lobResponse: AxiosResponse<any, any> | null = null;
    tokenPayload : JwtPayload | null = null;
-   lobExtraHeaders : Record<string, string> = {};
+   lobExtraHeaders : Record<string, string> = {};   
 
    constructor(apiSetup: APISetup, backboneSetting: BackboneSetting, wrappedRequest: WrappedRequest) {
       this.apiSetup = apiSetup;
