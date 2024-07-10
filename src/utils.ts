@@ -124,8 +124,8 @@ export function deriveBackboneContext(request: Request, backboneSetting: Backbon
 export function sendBackResponse(response: Response, backboneContext: BackboneContext) {
 
   const lobResponse = backboneContext.lobResponse;
-  if( lobResponse ==undefined || lobResponse == null ) {
-     throw new OAGError('Invalid lob resposne', 'SYS01', 500);
+  if( lobResponse == undefined || lobResponse == null ) {
+     throw new OAGError('Invalid lob resposne', 'SYS01', 500, "unsuccessful LOB connection");
   }
 
   let statusCode = lobResponse.status;
@@ -135,6 +135,11 @@ export function sendBackResponse(response: Response, backboneContext: BackboneCo
   Object.keys(responseHeaders).forEach((key) => {
      response.setHeader(key, responseHeaders[key]);
   });
+  
+  if( statusCode >= 400 ) {
+    response.setHeader('x-gtwy-errorcode', 'LOB01');
+  }
+
 
   response.status(statusCode).send(responseBody);
 }

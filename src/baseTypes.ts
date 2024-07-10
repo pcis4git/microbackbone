@@ -40,7 +40,7 @@ export class RequestParams {
 export class BackboneContext {
 
    startTimeStamp: number = Date.now();
-   startTime: string = new Date().toLocaleDateString();
+   startTime: string = new Date().toLocaleString();
    apiSetup: APISetup ;
    backboneSetting: BackboneSetting;
    wrappedRequest: WrappedRequest ;

@@ -1,6 +1,8 @@
 import log4js from 'log4js';
 import dotenv from 'dotenv';
 import { BackboneContext } from './baseTypes';
+import { OAGError } from './errors';
+import { log } from 'console';
 
 dotenv.config();
 const consoleLogLevel = process.env.CONSOLE_LOG_LEVEL || 'info';
@@ -51,17 +53,18 @@ export function logSuccessTransaction(backboneContext : BackboneContext ) {
 
    if( backboneContext.lobResponse?.status ?? 0 >= 400 ) {
        logEntry['status'] = 'error';
-       logEntry['gtwy-error-code']  = 'LOB-ERROR';
+       logEntry['gtwy-error-code']  = 'LOB01';
    }
    consoleLogger.info( JSON.stringify(logEntry) );
 }
 
-export function logErrorTransaction(backboneContext : BackboneContext, error : any ) {
+export function logErrorTransaction(backboneContext : BackboneContext, error : OAGError ) {
     let logEntry : any = {};
     logEntry['status'] = 'error';
     populateTxnContext( logEntry, backboneContext );
-    logEntry['gtwy-error-code']     = error['errorCode'];
-    logEntry['gtwy-error-message']  = error['errorMessage'];
+    logEntry['gtwy-error-code']     = error.errorCode;
+    logEntry['gtwy-error-message']  = error.message;
+    logEntry['error-details']       = error.errorDetails;
     consoleLogger.info( JSON.stringify(logEntry) );
 }
 
@@ -72,7 +75,10 @@ function populateTxnContext( logEntry : any, backboneContext : BackboneContext )
     logEntry['lobUrl']  = backboneContext.wrappedRequest.stageVariables['lobEndpoint'] + backboneContext.wrappedRequest.context['resource-path'];
     logEntry['method']  = backboneContext.wrappedRequest.context['http-method'];
     logEntry['startTime'] = backboneContext.startTime;
-    logEntry['endTime']   = new Date().toLocaleDateString();
+    logEntry['endTime']   = new Date().toLocaleString();
     logEntry['timeToServe'] = Date.now() - backboneContext.startTimeStamp;
     logEntry['latencyRecords'] = backboneContext.latencyRecords;
+
+    logEntry['X-Amzn-Trace-Id']   = backboneContext.wrappedRequest.params.header['X-Amzn-Trace-Id'];
+    logEntry['X-Amzn-Request-Id'] = backboneContext.wrappedRequest.context['request-id'];
 }

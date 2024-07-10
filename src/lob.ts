@@ -83,10 +83,10 @@ export class LobHandler implements IBackboneHandler, ILatency {
       this.recordLatency(backboneContext);
       fileLogger.debug('Backend call successful, response status: ' + (backboneContext.lobResponse ? backboneContext.lobResponse.status : 'unknown'));
     }
-    catch (error) {
+    catch (error : any ) {
       this.recordLatency(backboneContext);
       fileLogger.debug(`LobHandler: Error occurred while processing the request: ${error}`);
-      throw new OAGError('LobHandler: Error occurred while calling backend', 'SYS01', 500, 'error details: ' + error);
+      throw new OAGError('Internal server error', 'SYS01', 500, 'details: ' + error['message'] + '. stack: ' + error['stack']);
     }
   }
 

@@ -27,7 +27,7 @@ export class Validator implements IBackboneHandler, ILatency {
             token = token.substring(7);
             const decodedToken : JwtPayload | null = jwt.decode(token, {json: true});
             if( decodedToken == null ) {
-                throw new OAGError('Invalid token', 'ATH02', 401);
+                throw new OAGError('Invalid token', 'ATH02', 401, 'Failed to decode JWT token');
             }    
             backboneContext.tokenPayload = decodedToken;
             
@@ -43,7 +43,7 @@ export class Validator implements IBackboneHandler, ILatency {
                 throw error;
             }
             else {
-                throw new OAGError('Invalid token', 'ATH01', 401);
+                throw new OAGError('Invalid token', 'ATH01', 401, 'Failed to process JWT Token: ' + error);
             }
         }
 
@@ -67,7 +67,7 @@ export class Validator implements IBackboneHandler, ILatency {
         }
 
         if( !isValidClaim ) {
-            throw new OAGError(message, 'ATH03', 401);
+            throw new OAGError(message, 'ATH03', 401, 'Failed to validate claim');
         } 
     }
 

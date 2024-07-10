@@ -105,23 +105,23 @@ async function handleRequest(request: Request, response: Response, backboneSetti
       sendBackResponse(response, backboneContext);      
       logSuccessTransaction(backboneContext);
   }
-  catch( error ) {
+  catch( error : any ) {
     fileLogger.error(`Error occurred while processing the request: ${error}`);
-    logErrorTransaction(backboneContext, error);
+    let oagError = null;
     if( error instanceof OAGError ) {
-      let errorMsg = {
-        errorCode: error.errorCode,
-        message: error.message
-      }
-      response.status(error.httpCode).send(errorMsg);
+      oagError = error;
     }
     else {
-      let errorMsg = {
-        errorCode: 'SYS00',
-        message: 'Internal server error'
-      }
-      response.status(500).send(errorMsg);      
+      oagError = new OAGError('Internal server error', 'SYS00', 500, 'Internal server error ' + error )
     }
+    logErrorTransaction(backboneContext, oagError);
+
+    let errorMsg = {
+      errorCode: oagError.errorCode,
+      message: oagError.message
+    }
+    response.setHeader('x-gtwy-errorcode', oagError.errorCode);
+    response.status(oagError.httpCode).send(errorMsg);
   }
 }
 

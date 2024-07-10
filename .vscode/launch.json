@@ -7,8 +7,9 @@
         "name": "Launch Program",
         "skipFiles": ["<node_internals>/**"],
         "program": "${workspaceFolder}/src/index.ts", // Entry point of your application
-        "preLaunchTask": "tsc: build - tsconfig.json", // Ensure TypeScript builds before launching
-        "outFiles": ["${workspaceFolder}/dist/**/*.js"] // Output directory
+        //"preLaunchTask": "tsc: build - tsconfig.json", // Ensure TypeScript builds before launching
+        "outFiles": ["${workspaceFolder}/dist/**/*.js"], // Output directory
+        "runtimeExecutable": "C:\\apps\\nodev20.13.1\\node.exe"
       }
     ]
   }

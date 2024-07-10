@@ -12,9 +12,5 @@ export class OAGError extends Error {
         this.httpCode = httpCode;
         this.name = this.constructor.name; 
         this.errorDetails = errorDetails;
-
-        if (Error.captureStackTrace) {
-            Error.captureStackTrace(this, this.constructor);
-        }
     }
 }
