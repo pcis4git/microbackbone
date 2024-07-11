@@ -52,7 +52,7 @@ export class Validator implements IBackboneHandler, ILatency {
 
     public recordLatency(backboneContext: BackboneContext): void {
         let latency: number = Date.now() - this.startTime;
-        let latencyRecord: LatencyRecord = new LatencyRecord(this.startTime, latency, 'Validator');
+        let latencyRecord: LatencyRecord = new LatencyRecord(this.startTime, latency, 'Validate');
         backboneContext.latencyRecords.push(latencyRecord);
     }
 

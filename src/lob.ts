@@ -34,12 +34,11 @@ export class LobHandler implements IBackboneHandler, ILatency {
     // resolve query parameters
     let queryStrings: Record<string, string> = wrappedRequest.params.querystring;
     if (Object.keys(queryStrings).length > 0) {
-      let queryString: string = '';
-      Object.entries(queryStrings).forEach(([key, value]) => {
-        queryString = queryString + `${key}=${value}&`;
-      });
-      queryString = queryString.slice(0, queryString.length - 1);
+      let queryString: string = Object.keys(queryStrings)
+                                     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(queryStrings[key])}`)
+                                     .join('&');      
       endpoint = endpoint + '?' + queryString;
+      wrappedRequest.context['composed-query-string'] = queryString;
     }
 
     let headers: Record<string, string> = {};
@@ -60,7 +59,7 @@ export class LobHandler implements IBackboneHandler, ILatency {
       // this validatestatus function will avoid axios throw exception when backend return 4xx or 5xx status
       validateStatus: function (status: any) {
         return true; 
-      },
+      }
     };
 
     try {
@@ -92,7 +91,7 @@ export class LobHandler implements IBackboneHandler, ILatency {
 
   public recordLatency(backboneContext: BackboneContext): void {
     let latency: number = Date.now() - this.startTime;
-    let latencyRecord: LatencyRecord = new LatencyRecord(this.startTime, latency, 'LobHandler');
+    let latencyRecord: LatencyRecord = new LatencyRecord(this.startTime, latency, 'LOB Call');
     backboneContext.latencyRecords.push(latencyRecord);
   }
 }

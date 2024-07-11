@@ -55,7 +55,7 @@ export class TokenHandler implements IBackboneHandler, ILatency {
 
     public recordLatency(backboneContext: BackboneContext): void {
         let latency: number = Date.now() - this.startTime;
-        let latencyRecord: LatencyRecord = new LatencyRecord(this.startTime, latency, 'Token Handler');
+        let latencyRecord: LatencyRecord = new LatencyRecord(this.startTime, latency, 'OAG Token');
         backboneContext.latencyRecords.push(latencyRecord);
     }
 }

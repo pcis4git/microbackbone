@@ -97,13 +97,13 @@ export function logRequest(request:Request) {
   fileLogger.debug(`Body: ${JSON.stringify(request.body)}`);  
 }
 
-export function getBackBoneSetting(): BackboneSetting {
-  let backboneSetting: BackboneSetting = new BackboneSetting();
-  backboneSetting.fmblEndPoint = "https://fmbl.com";
-  backboneSetting.httpsAgent = getHttpsAgent();
-  backboneSetting.privateSigningKey = getSigningKey();
-  return backboneSetting;
-}
+// export function getBackBoneSetting(): BackboneSetting {
+//   let backboneSetting: BackboneSetting = new BackboneSetting();
+//   backboneSetting.fmblEndPoint = process.env.FMBL_ENDPOINT || '';
+//   backboneSetting.httpsAgent = getHttpsAgent();
+//   backboneSetting.privateSigningKey = getSigningKey();
+//   return backboneSetting;
+// }
 
 export function deriveBackboneContext(request: Request, backboneSetting: BackboneSetting): BackboneContext {
 
@@ -144,10 +144,9 @@ export function sendBackResponse(response: Response, backboneContext: BackboneCo
   response.status(statusCode).send(responseBody);
 }
 
-export async function getBackBoneSetting2(): Promise<BackboneSetting> {
+export async function getBackBoneSetting(): Promise<BackboneSetting> {
   let backboneSetting: BackboneSetting = new BackboneSetting();
-  backboneSetting.fmblEndPoint = "https://fmbl.com";
-
+  backboneSetting.fmblEndPoint = process.env.FMBL_ENDPOINT || '';
 
   fileLogger.info('Getting JWKS from AWS Secrets Manager...');
 

@@ -11,7 +11,7 @@ import { LobHandler } from './lob';
 import { OAGError } from './errors';
 import { Validator } from './validater';
 import { AuditHandler } from './audit';
-import { logRequest, deriveBackboneContext, sendBackResponse, getBackBoneSetting, getBackBoneSetting2 } from "./utils";
+import { logRequest, deriveBackboneContext, sendBackResponse, getBackBoneSetting } from "./utils";
 import { TokenHandler } from './token';
 import { consoleLogger, fileLogger, logErrorTransaction, logSuccessTransaction } from './logger';  
 import { log } from 'console';
@@ -62,8 +62,7 @@ launchExpress();
 async function launchExpress() {
 
   const app = express();
-  //const backboneSetting : BackboneSetting = getBackBoneSetting();
-  const backboneSetting : BackboneSetting = await getBackBoneSetting2();
+  const backboneSetting : BackboneSetting = await getBackBoneSetting();
 
   app.use(cors());
   app.use(bodyParser.json());

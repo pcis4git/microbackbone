@@ -81,4 +81,8 @@ function populateTxnContext( logEntry : any, backboneContext : BackboneContext )
 
     logEntry['X-Amzn-Trace-Id']   = backboneContext.wrappedRequest.params.header['X-Amzn-Trace-Id'];
     logEntry['X-Amzn-Request-Id'] = backboneContext.wrappedRequest.context['request-id'];
+
+    if( backboneContext.issues && backboneContext.issues.length > 0 ) {
+        logEntry['issues'] = backboneContext.issues;
+    }
 }

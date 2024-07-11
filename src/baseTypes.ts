@@ -47,7 +47,9 @@ export class BackboneContext {
    latencyRecords: LatencyRecord[]; 
    lobResponse: AxiosResponse<any, any> | null = null;
    tokenPayload : JwtPayload | null = null;
-   lobExtraHeaders : Record<string, string> = {};   
+   lobExtraHeaders : Record<string, string> = {};
+   issues: string[] = []; 
+
 
    constructor(apiSetup: APISetup, backboneSetting: BackboneSetting, wrappedRequest: WrappedRequest) {
       this.apiSetup = apiSetup;
