@@ -15,7 +15,7 @@ spec:
       serviceAccountName: microbackbone
       containers:
         - name: backbone
-          image: 872859983801.dkr.ecr.ca-central-1.amazonaws.com/oag-backbone:1.0.5
+          image: 872859983801.dkr.ecr.ca-central-1.amazonaws.com/oag-backbone:1.0.8
           ports:
             - containerPort: 8080
               protocol: TCP
