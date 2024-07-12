@@ -14,7 +14,7 @@ const loggerConfig: any = {
             "type": "stdout",
             "layout": {
                 "type": "pattern",
-                "pattern": "%d{yyyy-MM-dd hh:mm:ss} [%p] %m"
+                "pattern": "%m"
             }
         },
         "rotationFile": {

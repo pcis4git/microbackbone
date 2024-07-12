@@ -27,9 +27,6 @@ export class AuditHandler implements IBackboneHandler, ILatency {
         
         var auditFailed : boolean = false; 
         const axiosConfig = {
-            // validateStatus: function (status: any) {
-            //   return true; 
-            // },
             headers,
             httpsAgent: backboneContext.backboneSetting.httpsAgent 
         };
@@ -37,8 +34,10 @@ export class AuditHandler implements IBackboneHandler, ILatency {
         let auditFailure : any = null;
         while (this.tryTimes > 0) {
             try {
+                fileLogger.debug(`AuditHandler: Sending audit message to FMBL: ${JSON.stringify(fmblMsg)}`);
                 let response = await axios.post(backboneContext.backboneSetting.fmblEndPoint, fmblMsg, axiosConfig);
                 this.tryTimes = 0;
+                fileLogger.debug(`AuditHandler: Response from FMBL: ${JSON.stringify(response.data)}`);
             } 
             catch (error : any) {
                 fileLogger.error(`Error in AuditHandler: ${error}`);
@@ -51,6 +50,8 @@ export class AuditHandler implements IBackboneHandler, ILatency {
             }
         }
 
+        this.recordLatency(backboneContext);
+
         if ( auditFailed && this.throwAuditError) {
             throw new OAGError("Internal Server Error", "GTWY-SYS09", 500, auditFailure['message'] + '. Stack: ' + auditFailure['stack']);
         }
@@ -61,7 +62,6 @@ export class AuditHandler implements IBackboneHandler, ILatency {
         let latencyRecord: LatencyRecord = new LatencyRecord(this.startTime, latency, 'Audit');
         backboneContext.latencyRecords.push(latencyRecord);
     }
-
 
     private buildFMBLMessage(backboneContext: BackboneContext) {   
         const requestRecord = this.buildRequestRecord(backboneContext);        
