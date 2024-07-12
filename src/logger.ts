@@ -54,6 +54,7 @@ export function logSuccessTransaction(backboneContext : BackboneContext ) {
    const lobResponse = backboneContext.lobResponse;
    if( lobResponse != null && lobResponse != undefined ) {
        const status = lobResponse.status;
+       console.log(`status code is ${status} from lob `);
        if( status >= 400 ) {
            logEntry['status'] = 'error';
            logEntry['gtwy-error-code']  = 'LOB01';
