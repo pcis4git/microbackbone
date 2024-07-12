@@ -51,9 +51,14 @@ export function logSuccessTransaction(backboneContext : BackboneContext ) {
    logEntry['status'] = 'success';
    populateTxnContext( logEntry, backboneContext );
 
-   if( backboneContext.lobResponse?.status ?? 0 >= 400 ) {
-       logEntry['status'] = 'error';
-       logEntry['gtwy-error-code']  = 'LOB01';
+   const lobResponse = backboneContext.lobResponse;
+
+   if( lobResponse != null && lobResponse != undefined ) {
+       const status = lobResponse.status;
+       if( status >= 400 ) {
+           logEntry['status'] = 'error';
+           logEntry['gtwy-error-code']  = 'LOB01';
+       }
    }
    consoleLogger.info( JSON.stringify(logEntry) );
 }
