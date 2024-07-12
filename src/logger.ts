@@ -52,7 +52,6 @@ export function logSuccessTransaction(backboneContext : BackboneContext ) {
    populateTxnContext( logEntry, backboneContext );
 
    const lobResponse = backboneContext.lobResponse;
-
    if( lobResponse != null && lobResponse != undefined ) {
        const status = lobResponse.status;
        if( status >= 400 ) {
