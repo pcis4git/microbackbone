@@ -54,7 +54,7 @@ export function logSuccessTransaction(backboneContext : BackboneContext ) {
    const lobResponse = backboneContext.lobResponse;
    if( lobResponse != null && lobResponse != undefined ) {
        const status = lobResponse.status;
-       console.log(`status code is ${status} from lob `);
+       logEntry['httpStatus'] = status;
        if( status >= 400 ) {
            logEntry['status'] = 'error';
            logEntry['gtwy-error-code']  = 'LOB01';
@@ -84,8 +84,8 @@ function populateTxnContext( logEntry : any, backboneContext : BackboneContext )
     logEntry['timeToServe'] = Date.now() - backboneContext.startTimeStamp;
     logEntry['latencyRecords'] = backboneContext.latencyRecords;
 
-    logEntry['X-Amzn-Trace-Id']   = backboneContext.wrappedRequest.params.header['X-Amzn-Trace-Id'];
-    logEntry['X-Amzn-Request-Id'] = backboneContext.wrappedRequest.context['request-id'];
+    logEntry['a-amzn-trace-id']   = backboneContext.wrappedRequest.params.header['X-Amzn-Trace-Id'];
+    logEntry['x-global-transaction-id'] = backboneContext.globalTransactionId;
 
     if( backboneContext.issues && backboneContext.issues.length > 0 ) {
         logEntry['issues'] = backboneContext.issues;

@@ -135,7 +135,8 @@ export function sendBackResponse(response: Response, backboneContext: BackboneCo
   Object.keys(responseHeaders).forEach((key) => {
      response.setHeader(key, responseHeaders[key]);
   });
-  
+  response.setHeader('x-global-transaction-id', backboneContext.globalTransactionId); 
+
   if( statusCode >= 400 ) {
     response.setHeader('x-gtwy-errorcode', 'LOB01');
   }

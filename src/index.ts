@@ -120,6 +120,7 @@ async function handleRequest(request: Request, response: Response, backboneSetti
       message: oagError.message
     }
     response.setHeader('x-gtwy-errorcode', oagError.errorCode);
+    response.setHeader('x-global-transaction-id', backboneContext.globalTransactionId); 
     response.status(oagError.httpCode).send(errorMsg);
   }
 }

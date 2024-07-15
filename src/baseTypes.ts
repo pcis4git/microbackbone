@@ -39,6 +39,7 @@ export class RequestParams {
 
 export class BackboneContext {
 
+   globalTransactionId: string = "";
    startTimeStamp: number = Date.now();
    startTime: string = new Date().toLocaleString();
    apiSetup: APISetup ;
@@ -56,6 +57,7 @@ export class BackboneContext {
       this.backboneSetting = backboneSetting;
       this.wrappedRequest = wrappedRequest;
       this.latencyRecords = [];
+      this.globalTransactionId = wrappedRequest.context['request-id'];
    }
 }
 

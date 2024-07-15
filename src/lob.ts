@@ -51,6 +51,7 @@ export class LobHandler implements IBackboneHandler, ILatency {
         }
       });
     }
+    headers['x-global-transaction-id'] = backboneContext.globalTransactionId;
  
     const axiosConfig = {
       headers,
